@@ -1,1 +1,1 @@
-include ':app', ':model_volley'
+include ':app', ':model_volley', ':model_bitmap'
