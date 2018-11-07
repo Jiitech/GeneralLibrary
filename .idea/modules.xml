@@ -3,12 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/GeneralLibrary.iml" filepath="$PROJECT_DIR$/GeneralLibrary.iml" />
-      <module fileurl="file://D:\WrokSpaces\workspace_studio\Git\GeneralLibrary\GeneralLibrary.iml" filepath="D:\WrokSpaces\workspace_studio\Git\GeneralLibrary\GeneralLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://D:\WrokSpaces\workspace_studio\Git\GeneralLibrary\app\app.iml" filepath="D:\WrokSpaces\workspace_studio\Git\GeneralLibrary\app\app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/model_bitmap/model_bitmap.iml" filepath="$PROJECT_DIR$/model_bitmap/model_bitmap.iml" />
       <module fileurl="file://$PROJECT_DIR$/model_volley/model_volley.iml" filepath="$PROJECT_DIR$/model_volley/model_volley.iml" />
-      <module fileurl="file://D:\WrokSpaces\workspace_studio\Git\GeneralLibrary\model_volley\model_volley.iml" filepath="D:\WrokSpaces\workspace_studio\Git\GeneralLibrary\model_volley\model_volley.iml" />
     </modules>
   </component>
 </project>
