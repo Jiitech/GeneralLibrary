@@ -14,9 +14,9 @@ import android.graphics.Bitmap.CompressFormat;
 import android.graphics.BitmapFactory;
 import android.util.Log;
 
-import com.android.volley.BuildConfig;
 import com.android.volley.misc.DiskLruCache;
 import com.android.volley.toolbox.ImageCache;
+import com.wukj.generallibrary.model.volley.BuildConfig;
 
 /**
  * Implementation of DiskLruCache by Jake Wharton modified from

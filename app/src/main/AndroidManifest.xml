@@ -15,7 +15,11 @@
 
         </activity>
 
-        <activity android:name="com.wukj.model.permission.sample.PermissionActivity">
+        <activity android:name=".permission.sample.PermissionActivity">
+
+        </activity>
+
+        <activity android:name=".af.AFctivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

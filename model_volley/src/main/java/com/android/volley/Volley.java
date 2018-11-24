@@ -20,12 +20,11 @@ import com.android.volley.toolbox.HttpStack;
 import com.android.volley.toolbox.HurlStack;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.VolleyTickle;
+import com.wukj.generallibrary.model.volley.BuildConfig;
+import com.wukj.generallibrary.model.volley.R;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Map;
-
-import static com.android.volley.toolbox.HttpHeaderParser.parseDateAsEpoch;
 
 /**
  * Created by HaKr on 13/05/17.

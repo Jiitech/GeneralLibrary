@@ -29,4 +29,5 @@ dependencies {
     implementation project(':model_bitmap')
     implementation project(':model_utils')
     implementation project(':model_volley')
+    implementation project(':model_af')
 }

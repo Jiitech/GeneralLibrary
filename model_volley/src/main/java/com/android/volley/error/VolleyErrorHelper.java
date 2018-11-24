@@ -6,9 +6,9 @@ import java.util.Map;
 import android.content.Context;
 
 import com.android.volley.NetworkResponse;
-import com.android.volley.R;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.wukj.generallibrary.model.volley.R;
 
 public class VolleyErrorHelper {
 

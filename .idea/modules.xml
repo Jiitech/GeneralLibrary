@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/GeneralLibrary.iml" filepath="$PROJECT_DIR$/GeneralLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/model_af/model_af.iml" filepath="$PROJECT_DIR$/model_af/model_af.iml" />
       <module fileurl="file://$PROJECT_DIR$/model_bitmap/model_bitmap.iml" filepath="$PROJECT_DIR$/model_bitmap/model_bitmap.iml" />
       <module fileurl="file://$PROJECT_DIR$/model_permission/model_permission.iml" filepath="$PROJECT_DIR$/model_permission/model_permission.iml" />
       <module fileurl="file://$PROJECT_DIR$/model_utils/model_utils.iml" filepath="$PROJECT_DIR$/model_utils/model_utils.iml" />

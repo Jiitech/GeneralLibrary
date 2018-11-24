@@ -5,7 +5,6 @@ import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
 import android.util.Log;
 
-import com.android.volley.BuildConfig;
 import com.android.volley.Cache;
 import com.android.volley.VolleyLog;
 import com.android.volley.cache.DiskBasedCache.CacheHeader;
@@ -14,8 +13,8 @@ import com.android.volley.misc.DiskLruCache;
 import com.android.volley.misc.IOUtils;
 import com.android.volley.misc.ImageUtils;
 import com.android.volley.misc.Utils;
+import com.wukj.generallibrary.model.volley.BuildConfig;
 
-import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileDescriptor;
 import java.io.FileInputStream;

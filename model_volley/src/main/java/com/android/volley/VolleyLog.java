@@ -23,6 +23,8 @@ import java.util.Locale;
 import android.os.SystemClock;
 import android.util.Log;
 
+import com.wukj.generallibrary.model.volley.BuildConfig;
+
 /** Logging helper class. */
 public class VolleyLog {
 
