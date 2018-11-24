@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 不可用时 -->
+    <item android:drawable="@drawable/shape_category_bg_off" android:state_enabled="false" />
+    <!-- 默认时 -->
+    <item android:drawable="@drawable/shape_category_bg_off" />
+    <!-- 按压时 -->
+    <item android:drawable="@drawable/shape_category_bg_on" android:state_pressed="true" />
+    <!-- 被选中时 -->
+    <item android:drawable="@drawable/shape_category_bg_on" android:state_selected="true" />
+    <!-- 被激活时 -->
+    <item android:drawable="@drawable/shape_category_bg_on" android:state_activated="true" />
+
+</selector>

@@ -11,7 +11,7 @@ import android.widget.Button;
 import com.wukj.general.library.permission.utils.PermissionFail;
 import com.wukj.general.library.permission.utils.PermissionHelper;
 import com.wukj.general.library.permission.utils.PermissionSucceed;
-import com.wukj.model.permission.R;
+import com.wukj.general.library.permission.R;
 
 /**
  * 项目名称：GeneralLibrary

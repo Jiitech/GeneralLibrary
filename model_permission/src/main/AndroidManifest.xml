@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.wukj.model.permission">
+    package="com.wukj.general.library.permission">
 
     <application>
+
+        <activity
+            android:name=".sample.PermissionActivity"
+            android:theme="@style/AppTheme.DarkActionBar" />
 
     </application>
 
