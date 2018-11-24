@@ -1,5 +1,6 @@
 package com.wukj.general.library.fragment.sample;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -21,25 +22,25 @@ import com.wukj.general.library.entity.gson.VCategoryGson;
 import com.wukj.general.utils.LogUtils;
 import com.wukj.general.utils.ReadAssetsUtils;
 
+import java.io.Serializable;
+
 
 /**
- *  * 项目名称：UILibrary
- *  * 创建时间：2018/11/17 上午2:52
- *  * 作者：Jonyker
- *  * 博客：http://www.udevtech.com
- *  * github：https://github.com/Jiitech
- *  * 修改人：Jonyker
- *  * 联系方式：QQ/534098845
- *  * 修改时间：2018/11/17 上午2:52
- *  * 备注：
- *  * 版本：V.1.0
- *  * 描述：
- *  * 1.
- *  * 2.
- *  * 3.
- *  
- */
-
+ * 项目名称：GeneralLibrary
+ * 创建时间：2018/11/25 上午12:20
+ * 作者：Jonyker
+ * 博客：http://www.udevtech.com
+ * github：https://github.com/Jiitech
+ * 修改人：Jonyker
+ * 联系方式：QQ/534098845
+ * 修改时间：2018/11/25 上午12:20
+ * 备注：
+ * 版本：V.1.0
+ * 描述：
+ * 1.
+ * 2.
+ * 3.
+ */
 public class VCategoryFragment extends SupFragment {
 
 
@@ -62,7 +63,7 @@ public class VCategoryFragment extends SupFragment {
 
 
         String path = getArguments().getString(Flag.JSON_PATH);
-        LogUtils.d(this.getClass(),"path:"+path);
+        LogUtils.d(this.getClass(), "path:" + path);
         String categoryJSON = ReadAssetsUtils.readLocalJSON(getActivity(), path);
 
         Gson gson = new Gson();
@@ -92,9 +93,7 @@ public class VCategoryFragment extends SupFragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 VCItemEntity entity = (VCItemEntity) view.getTag(R.id.category_item_id);
-                Intent intent = new Intent(getActivity(), TargetActivity.class);
-                intent.putExtra(Flag.TARGET, entity.getClazz());
-                getActivity().startActivity(intent);
+                skipTarget(entity);
             }
         });
 
@@ -104,9 +103,38 @@ public class VCategoryFragment extends SupFragment {
     public static VCategoryFragment newInstance(String jsonPath) {
         VCategoryFragment f = new VCategoryFragment();
         Bundle args = new Bundle();
-        args.putString(Flag.JSON_PATH,jsonPath);
+        args.putString(Flag.JSON_PATH, jsonPath);
         f.setArguments(args);
         return f;
+    }
+
+    private void skipTarget(VCItemEntity entity) {
+        Intent intent;
+        Object target = getTarget(entity.getClazz());
+        if (target instanceof Activity) {
+            intent = new Intent(getActivity(), target.getClass());
+        } else {
+            intent = new Intent(getActivity(), TargetActivity.class);
+            intent.putExtra(Flag.TARGET, (Serializable) entity);
+        }
+        getActivity().startActivity(intent);
+    }
+
+    private Object getTarget(String aClass) {
+        Object obj;
+        try {
+            // Create new fragment and transaction
+            Class<?> clazz = Class.forName(aClass);
+            obj = clazz.newInstance();
+            return obj;
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (java.lang.InstantiationException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 

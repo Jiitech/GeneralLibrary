@@ -6,18 +6,21 @@ import android.support.v4.app.Fragment;
 import com.wukj.general.library.af.results.FunctionManager;
 
 /**
- * 项目名称：AFCommunication
- * 创建时间：2018/7/13 0013 上午 8:47
- * 作者：Jonyker
- * 博客：http://blog.csdn.net/jerry_137188
- * github：https://github.com/Jiitech
- * 修改人：Jonyker
- * 联系方式：QQ/534098845
- * 修改时间：2018/7/13 0013 上午 8:47
- * 备注：
- * 版本：V.1.0
- * 描述：
- */
+ * 项目名称：GeneralLibrary
+ * 创建时间：2018/11/25 上午12:20
+ * 作者：Jonyker
+ * 博客：http://www.udevtech.com
+ * github：https://github.com/Jiitech
+ * 修改人：Jonyker
+ * 联系方式：QQ/534098845
+ * 修改时间：2018/11/25 上午12:20
+ * 备注：
+ * 版本：V.1.0
+ * 描述：
+ * 1.
+ * 2.
+ * 3.
+ */
 public class BaseFragment extends Fragment {
 
     protected FunctionManager mFunctionManager;

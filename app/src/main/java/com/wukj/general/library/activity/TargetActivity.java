@@ -1,7 +1,5 @@
 package com.wukj.general.library.activity;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +7,7 @@ import android.os.Bundle;
 
 import com.wukj.general.library.Flag;
 import com.wukj.general.library.R;
+import com.wukj.general.library.entity.VCItemEntity;
 
 public class TargetActivity extends AppCompatActivity {
 
@@ -17,27 +16,14 @@ public class TargetActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_target);
 
-        Object target = getTarget();
+        VCItemEntity entity = (VCItemEntity) getIntent().getSerializableExtra(Flag.TARGET);
 
-        if (target != null) {
-            if (target instanceof Activity) {
-                skipActivity(target.getClass());
-            } else if (target instanceof Fragment) {
-                replaceFragment((Fragment) target);
-            } else {
-                throw new IllegalArgumentException("Illegal parameter");
-            }
-        }
+        getSupportActionBar().setTitle(entity.getTitle());
+        replaceFragment((Fragment) getFClass(entity.getClazz()));
 
 
     }
 
-
-    private void skipActivity(Class clazz) {
-        Intent intent = new Intent(this, clazz);
-        this.startActivity(intent);
-        this.finish();
-    }
 
     private void replaceFragment(Fragment target) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -45,11 +31,9 @@ public class TargetActivity extends AppCompatActivity {
         transaction.commit();
     }
 
-    private Object getTarget() {
+    private Object getFClass(String fClass) {
         Object obj;
         try {
-            String fClass = getIntent().getStringExtra(Flag.TARGET);
-            // Create new fragment and transaction
             Class<?> clazz = Class.forName(fClass);
             obj = clazz.newInstance();
             return obj;
