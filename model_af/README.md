@@ -1,0 +1,22 @@
+
+## 模块概述：
+
+简述一下，Activity和Fragment通信的过程。
+
+首先说一下，这是一个相对双向过程的通信，类似客户端和服务器的过程。
+
+全程都是通过FragmentManger成整个查找目标和回调的过程，在BaseFragment中拿到自己依赖的Activity，然后让Activity拿到自己的实例，BaseFragment同时持有一个 FragmentManger的实例，这个FragmentManager并不是系统提供的那个Fragment，FragmentManager是用来管理需要通信的Fragment的Fragment，和Fragment的集合，Fragment需要向Activity发起通信的时候，只需要调用Fragment对应的唯一地址即可，这时候在Activity已经有个FragmentManager的实例，然后处理Fragment发起的请求，这时需要将Fragment发起请求的方法，在Activity中实现，这样就完成了一个单向通信，如果Fragment需要返回值，只需要在Fragment调用的invoke方法的时候，接收Activity返回结果就好，此时，Activity只要return出F让Fragment需要的结果即可。
+
+
+
+
+
+
+
+
+
+
+
+
+
+

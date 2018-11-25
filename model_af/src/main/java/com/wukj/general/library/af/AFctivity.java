@@ -25,7 +25,7 @@ public class AFctivity extends AppCompatActivity {
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.fragment_id, functionFragment, NoParamNoResultFragment.FUNCTION_NAME)
+                .add(R.id.fragment_id, functionFragment, WithParamWithResultFragment.FUNCTION_NAME)
                 .commit();
 
 

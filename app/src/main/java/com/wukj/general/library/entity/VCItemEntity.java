@@ -1,5 +1,7 @@
 package com.wukj.general.library.entity;
 
+import java.io.Serializable;
+
 /**
  * 项目名称：UILibrary
  * 创建时间：2018/11/17 下午12:07
@@ -17,7 +19,7 @@ package com.wukj.general.library.entity;
  * 3.
  */
 
-public class VCItemEntity {
+public class VCItemEntity implements Serializable {
 
 
     /**

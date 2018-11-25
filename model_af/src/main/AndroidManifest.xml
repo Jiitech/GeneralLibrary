@@ -1,2 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.wukj.general.library.af" />
+    package="com.wukj.general.library.af" >
+
+    <application>
+
+        <activity
+            android:name=".AFctivity"
+            android:theme="@style/AppTheme.DarkActionBar" />
+
+    </application>
+
+</manifest>

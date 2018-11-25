@@ -10,8 +10,8 @@
           "des": ""
         },
         {
-          "title": "模仿直播app的点赞效果",
-          "clazz": "com.wukj.uilibrary.model.favour.sample.FragmentLike",
+          "title": "Activity与Fragment通信",
+          "clazz": "com.wukj.general.library.af.AFctivity",
           "des": ""
         },
         {

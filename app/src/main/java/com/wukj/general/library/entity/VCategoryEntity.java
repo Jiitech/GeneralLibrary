@@ -1,5 +1,6 @@
 package com.wukj.general.library.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
 
@@ -19,7 +20,7 @@ import java.util.List;
  * 2.
  * 3.
  */
-public class VCategoryEntity {
+public class VCategoryEntity implements Serializable {
 
     private String type;
     private String title;
