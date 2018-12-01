@@ -36,6 +36,7 @@ dependencies {
     implementation project(':model_bitmap')
     implementation project(':model_volley')
     implementation project(':model_common')
+    implementation project(':model_multiload')
     implementation project(':model_permission')
 
 }

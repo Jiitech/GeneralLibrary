@@ -8,6 +8,7 @@ import android.os.Bundle;
 import com.wukj.general.library.Flag;
 import com.wukj.general.library.R;
 import com.wukj.general.library.entity.VCItemEntity;
+import com.wukj.general.utils.LogUtils;
 
 public class TargetActivity extends AppCompatActivity {
 
@@ -18,6 +19,8 @@ public class TargetActivity extends AppCompatActivity {
 
         VCItemEntity entity = (VCItemEntity) getIntent().getSerializableExtra(Flag.TARGET);
 
+        LogUtils.d(this.getClass(),"-----title:"+entity.getTitle());
+        LogUtils.d(this.getClass(),"-----class:"+entity.getClazz());
         getSupportActionBar().setTitle(entity.getTitle());
         replaceFragment((Fragment) getFClass(entity.getClazz()));
 

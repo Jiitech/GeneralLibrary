@@ -13,21 +13,16 @@
           "title": "Activity与Fragment通信",
           "clazz": "com.wukj.general.library.af.AFctivity",
           "des": ""
-        },
-        {
-          "title": "标签云",
-          "clazz": "com.wukj.uilibrary.model.tagcloud.sample.FragmentTagCloud",
-          "des": ""
         }
       ]
     },
     {
       "type": "category",
-      "title": "SurfaceView",
+      "title": "断点续传",
       "items": [
         {
-          "title": "自定义SurfaceView的基本使用方式",
-          "clazz": "com.wukj.uilibrary.model.official.ui.sfv.sample.FragmentCSurfaceView",
+          "title": "断点续传-Range",
+          "clazz": "com.wukj.general.multiload.fragment.FragmentMultiload",
           "des": ""
         }
       ]
