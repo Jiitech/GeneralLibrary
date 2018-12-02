@@ -17,5 +17,5 @@ package com.wukj.general.multiload;
  * 3.
  */
 public interface RateListener {
-    void onDownloadSize(int progress);
+    void onDownloadSize(float progress);
 }

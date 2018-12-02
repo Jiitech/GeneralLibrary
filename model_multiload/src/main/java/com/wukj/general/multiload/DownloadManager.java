@@ -5,6 +5,7 @@ import android.content.Context;
 import com.wukj.general.multiload.db.ThreadDao;
 import com.wukj.general.multiload.db.ThreadDaoImpl;
 import com.wukj.general.multiload.entity.FileInfoEntity;
+import com.wukj.general.utils.LogUtils;
 
 import java.util.List;
 
@@ -37,22 +38,25 @@ public class DownloadManager {
         mThreadDao = new ThreadDaoImpl(context);
     }
 
-    public void download(FileInfoEntity infoEntity) {
+    public void download(FileInfoEntity infoEntity,RateListener listener) {
         // 读取数据库的线程信息
         List<FileInfoEntity> threadInfos = mThreadDao.queryThread(infoEntity.getUrl());
         FileInfoEntity entity = null;
         if (threadInfos.size() == 0) {
-            entity = new FileInfoEntity(0, infoEntity.getUrl(), 0, 0, infoEntity.getLength(), rateListener);
+            entity = new FileInfoEntity(0, infoEntity.getUrl(), 0, 0, infoEntity.getLength());
+            entity.setThreadId(12111);
         } else {
             entity = threadInfos.get(0);
         }
+
+        LogUtils.d(this.getClass(),"线程id:"+entity.getThreadId());
+        entity.setFileDir(infoEntity.getFileDir());
+        entity.setFileName(infoEntity.getFileName());
+        entity.setEnd(infoEntity.getLength());
+        entity.setLength(infoEntity.getLength());
+        entity.setmRateListener(listener);
         new DownloadThread(entity, mThreadDao).start();
     }
 
-    private RateListener rateListener = new RateListener() {
-        @Override
-        public void onDownloadSize(int progress) {
 
-        }
-    };
 }

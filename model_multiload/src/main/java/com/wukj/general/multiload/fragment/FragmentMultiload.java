@@ -7,14 +7,18 @@ import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.View;
+import android.widget.Button;
 
 import com.wukj.general.common.fragment.SupFragment;
 import com.wukj.general.multiload.DownloadManager;
 import com.wukj.general.multiload.R;
+import com.wukj.general.multiload.RateListener;
 import com.wukj.general.multiload.entity.FileInfoEntity;
 import com.wukj.general.multiload.utils.InitThread;
+import com.wukj.general.utils.LogUtils;
 
 import java.io.File;
+import java.text.DecimalFormat;
 
 /**
  * 项目名称：GeneralLibrary
@@ -35,6 +39,7 @@ import java.io.File;
 public class FragmentMultiload extends SupFragment {
 
 
+    private Button mBtn;
 
     @Override
     protected int getCreateVID() {
@@ -43,8 +48,8 @@ public class FragmentMultiload extends SupFragment {
 
     @Override
     protected void onInitV(@NonNull View view, @Nullable Bundle savedInstanceState) {
-
-        view.findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+        mBtn = view.findViewById(R.id.button);
+        mBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -68,7 +73,7 @@ public class FragmentMultiload extends SupFragment {
 
 
     private String getAPKFileURL(){
-        String apk_url = "https://dldir1.qq.com/weixin/android/weixin673android1360.apk";
+        String apk_url = "https://qd.myapp.com/myapp/qqteam/Androidlite/qqlite_3.7.1.704_android_r110206_GuanWang_537057973_release_10000484.apk";
         return apk_url;
     }
 
@@ -79,9 +84,9 @@ public class FragmentMultiload extends SupFragment {
             switch (msg.what) {
                 case DownloadManager.DOWNLOAD_MESSAGE:
                     FileInfoEntity fileInfo = (FileInfoEntity) msg.obj;
-
+                    LogUtils.d(this.getClass(),"文件信息："+fileInfo.toString());
                     DownloadManager manager = new DownloadManager(getActivity());
-                    manager.download(fileInfo);
+                    manager.download(fileInfo,rateListener);
                     // 启动下载任务
 //                    downloadTask = new DownloadTask(DownloadService.this, fileInfo);
 //                    downloadTask.download();
@@ -97,6 +102,14 @@ public class FragmentMultiload extends SupFragment {
 
 
 
+    private RateListener rateListener = new RateListener() {
+        @Override
+        public void onDownloadSize(float progress) {
+            LogUtils.d(this.getClass(),"下载进度："+progress);
 
+            mBtn.setText("下载("+new DecimalFormat("#0.00").format(progress)+"%)");
+
+        }
+    };
 
 }

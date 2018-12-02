@@ -46,13 +46,12 @@ public class FileInfoEntity implements Serializable {
     public FileInfoEntity() {
     }
 
-    public FileInfoEntity(int threadId, String url, int start, int end, int length, RateListener mRateListener) {
+    public FileInfoEntity(int threadId, String url, int start, int end, int length) {
         this.threadId = threadId;
         this.url = url;
         this.start = start;
         this.end = end;
         this.length = length;
-        this.mRateListener = mRateListener;
     }
 
     public RateListener getmRateListener() {
@@ -133,5 +132,21 @@ public class FileInfoEntity implements Serializable {
 
     public void setFileDir(String fileDir) {
         this.fileDir = fileDir;
+    }
+
+    @Override
+    public String toString() {
+        return "FileInfoEntity{" +
+                "threadId=" + threadId +
+                ", url='" + url + '\'' +
+                ", start=" + start +
+                ", end=" + end +
+                ", finished=" + finished +
+                ", fileId=" + fileId +
+                ", fileDir='" + fileDir + '\'' +
+                ", fileName='" + fileName + '\'' +
+                ", length=" + length +
+                ", mRateListener=" + mRateListener +
+                '}';
     }
 }

@@ -12,7 +12,22 @@ import com.wukj.general.multiload.db.ThreadDao;
 import com.wukj.general.multiload.entity.FileInfoEntity;
 import com.wukj.general.utils.LogUtils;
 
-
+/**
+ * 项目名称：GeneralLibrary
+ * 创建时间：2018/12/1 下午8:05
+ * 作者：Jonyker
+ * 博客：http://www.udevtech.com
+ * github：https://github.com/Jiitech
+ * 修改人：Jonyker
+ * 联系方式：QQ/534098845
+ * 修改时间：2018/12/1 下午8:05
+ * 备注：
+ * 版本：V.1.0
+ * 描述：
+ * 1.
+ * 2.
+ * 3.
+ */
 public class DownloadThread extends Thread {
 
     private FileInfoEntity fileEntity = null;
@@ -28,9 +43,15 @@ public class DownloadThread extends Thread {
 
     @Override
     public void run() {
+
+        if (fileEntity.getFinished() == fileEntity.getLength()) {
+            threadDao.deleteThread(fileEntity.getUrl());
+            LogUtils.d(this.getClass(), "已经下载完成，删除文件");
+        }
         // 向数据库插入线程信息
         if (!threadDao.isThreadInfoExist(fileEntity.getUrl(), fileEntity.getThreadId())) {
             threadDao.insertThread(fileEntity);
+            LogUtils.d(this.getClass(), "插入本地数据库");
         }
         HttpURLConnection connection = null;
         RandomAccessFile randomAccessFile = null;
@@ -44,6 +65,9 @@ public class DownloadThread extends Thread {
             int start = fileEntity.getStart() + fileEntity.getFinished();
             connection.setRequestProperty("Range", "bytes=" + start + "-" + fileEntity.getEnd());
 
+            LogUtils.d(this.getClass(), "开始下载的位置：" + start);
+            LogUtils.d(this.getClass(), "文件夹：" + fileEntity.getFileDir());
+            LogUtils.d(this.getClass(), "文件名：" + fileEntity.getFileName());
             File file = new File(fileEntity.getFileDir(), fileEntity.getFileName());
             randomAccessFile = new RandomAccessFile(file, "rwd");
             randomAccessFile.seek(start);
@@ -52,21 +76,18 @@ public class DownloadThread extends Thread {
             int finished = fileEntity.getFinished();
             if (connection.getResponseCode() == HttpURLConnection.HTTP_PARTIAL) {
                 inputStream = connection.getInputStream();
-                byte[] buffer = new byte[4 * 1024];
+                byte[] buffer = new byte[64 * 1024];
                 int len = -1;
-                long time = System.currentTimeMillis();
                 while ((len = inputStream.read(buffer)) != -1) {
                     randomAccessFile.write(buffer, 0, len);
                     finished += len;
-                    if ((System.currentTimeMillis() - time) > 500) {
 
-                        time = System.currentTimeMillis();
-                        int progress = finished / fileEntity.getLength() * 100;
-                        fileEntity.getmRateListener().onDownloadSize(progress);
+                    float progress = ((float)finished )/ fileEntity.getLength() * 100;
 
-                    }
+                    fileEntity.getmRateListener().onDownloadSize(progress);
+
+                    threadDao.updateThread(fileEntity.getUrl(), fileEntity.getThreadId(), finished);
                     if (isPause) {
-                        threadDao.updateThread(fileEntity.getUrl(), fileEntity.getThreadId(), finished);
                         return;
                     }
                 }
