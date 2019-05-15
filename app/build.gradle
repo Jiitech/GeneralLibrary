@@ -31,13 +31,13 @@ dependencies {
     implementation 'com.ashokvarma.android:bottom-navigation-bar:2.1.0'
 
 
-    implementation project(':model_af')
     implementation project(':model_utils')
-    implementation project(':model_bitmap')
-    implementation project(':model_volley')
     implementation project(':model_common')
-    implementation project(':model_multiload')
-    implementation project(':model_permission')
+//    implementation project(':model_af')
+//    implementation project(':model_bitmap')
+//    implementation project(':model_volley')
+//    implementation project(':model_multiload')
+//    implementation project(':model_permission')
 //    implementation project(':model_af')
 
 }
