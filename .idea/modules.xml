@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/model_bitmap/model_bitmap.iml" filepath="$PROJECT_DIR$/model_bitmap/model_bitmap.iml" />
       <module fileurl="file://$PROJECT_DIR$/model_common/model_common.iml" filepath="$PROJECT_DIR$/model_common/model_common.iml" />
       <module fileurl="file://$PROJECT_DIR$/model_multiload/model_multiload.iml" filepath="$PROJECT_DIR$/model_multiload/model_multiload.iml" />
+      <module fileurl="file://$PROJECT_DIR$/model_mvp/model_mvp.iml" filepath="$PROJECT_DIR$/model_mvp/model_mvp.iml" />
       <module fileurl="file://$PROJECT_DIR$/model_permission/model_permission.iml" filepath="$PROJECT_DIR$/model_permission/model_permission.iml" />
       <module fileurl="file://$PROJECT_DIR$/model_utils/model_utils.iml" filepath="$PROJECT_DIR$/model_utils/model_utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/model_volley/model_volley.iml" filepath="$PROJECT_DIR$/model_volley/model_volley.iml" />

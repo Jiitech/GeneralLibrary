@@ -1,1 +1,1 @@
-include ':app', ':model_volley', ':model_bitmap', ':model_utils', ':model_permission', ':model_af', ':model_common', ':model_multiload'
+include ':app', ':model_volley', ':model_bitmap', ':model_utils', ':model_permission', ':model_af', ':model_common', ':model_multiload', ':model_mvp'

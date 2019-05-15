@@ -29,7 +29,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.ashokvarma.android:bottom-navigation-bar:2.1.0'
-//    implementation 'com.google.android:flexbox:1.1.0'
+
 
     implementation project(':model_af')
     implementation project(':model_utils')
@@ -38,5 +38,6 @@ dependencies {
     implementation project(':model_common')
     implementation project(':model_multiload')
     implementation project(':model_permission')
+//    implementation project(':model_af')
 
 }
