@@ -29,11 +29,11 @@
     },
     {
       "type": "category",
-      "title": "Paint",
+      "title": "源码分析",
       "items": [
         {
-          "title": "Paint的基础使用方式",
-          "clazz": "com.wukj.uilibrary.model.official.ui.basic.sample.FragmentPaint",
+          "title": "Handler源码",
+          "clazz": "com.wukj.general.library.sdk.HandlerFragment",
           "des": ""
         }
       ]

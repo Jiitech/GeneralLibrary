@@ -1,22 +1,5 @@
 package com.wukj.general.library.fragment;
 
-/**
- * 项目名称：UILibrary
- * 创建时间：2018/11/17 上午2:51
- * 作者：Jonyker
- * 博客：http://www.udevtech.com
- * github：https://github.com/Jiitech
- * 修改人：Jonyker
- * 联系方式：QQ/534098845
- * 修改时间：2018/11/17 上午2:51
- * 备注：
- * 版本：V.1.0
- * 描述：
- * 1.
- * 2.
- * 3.
- */
-
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;

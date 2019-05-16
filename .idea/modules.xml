@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/GeneralLibrary.iml" filepath="$PROJECT_DIR$/GeneralLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/model_common/model_common.iml" filepath="$PROJECT_DIR$/model_common/model_common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/model_sdk/model_sdk.iml" filepath="$PROJECT_DIR$/model_sdk/model_sdk.iml" />
       <module fileurl="file://$PROJECT_DIR$/model_utils/model_utils.iml" filepath="$PROJECT_DIR$/model_utils/model_utils.iml" />
     </modules>
   </component>
