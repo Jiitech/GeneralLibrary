@@ -13,7 +13,7 @@ import com.wukj.general.common.fragment.SupFragment;
  * 创建时间：2018/11/17 上午2:52
  * 作者：Jonyker
  * 博客：http://www.udevtech.com
- * github：https://github.com/Jiitech
+ * github：https://github.com/Jonyker
  * 修改人：Jonyker
  * 联系方式：QQ/534098845
  * 修改时间：2018/11/17 上午2:52

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GeneralLibrary.iml" filepath="$PROJECT_DIR$/GeneralLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AndroidGeneralLibrary.iml" filepath="$PROJECT_DIR$/AndroidGeneralLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/model_common/model_common.iml" filepath="$PROJECT_DIR$/model_common/model_common.iml" />
       <module fileurl="file://$PROJECT_DIR$/model_sdk/model_sdk.iml" filepath="$PROJECT_DIR$/model_sdk/model_sdk.iml" />

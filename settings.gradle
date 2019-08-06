@@ -8,3 +8,8 @@ include ':model_common'
 //include ':model_af'
 //include ':model_multiload'
 //include ':model_mvp'
+
+//include ':model_ndk'
+//include ':model_tagcloud'
+//include ':model_favour'
+//include ':model_official_ui'

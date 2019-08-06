@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  * 创建时间：2018/12/1 下午2:49
  * 作者：Jonyker
  * 博客：http://www.udevtech.com
- * github：https://github.com/Jiitech
+ * github：https://github.com/Jonyker
  * 修改人：Jonyker
  * 联系方式：QQ/534098845
  * 修改时间：2018/12/1 下午2:49
