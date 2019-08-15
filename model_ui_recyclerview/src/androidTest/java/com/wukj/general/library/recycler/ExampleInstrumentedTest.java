@@ -1,4 +1,4 @@
-package com.wukj.general.library.sdk;
+package com.wukj.general.library.recycler;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

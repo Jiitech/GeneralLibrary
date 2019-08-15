@@ -1,4 +1,4 @@
-package com.wukj.general.library.sdk;
+package com.wukj.general.library.recycler;
 
 import org.junit.Test;
 

@@ -1,15 +1,9 @@
 include ':app'
-include ':model_ui_recyclerview'
+
 include ':model_general_utils'
 include ':model_general_common'
-//include ':model_volley'
-//include ':model_bitmap'
-//include ':model_permission'
-//include ':model_af'
-//include ':model_multiload'
-//include ':model_mvp'
 
-//include ':model_ndk'
-//include ':model_tagcloud'
-//include ':model_favour'
-//include ':model_official_ui'
+include ':model_impo_permission'
+
+include ':model_ui_recyclerview'
+
