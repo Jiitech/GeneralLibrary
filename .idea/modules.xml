@@ -4,9 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidGeneralLibrary.iml" filepath="$PROJECT_DIR$/AndroidGeneralLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/model_common/model_common.iml" filepath="$PROJECT_DIR$/model_common/model_common.iml" />
-      <module fileurl="file://$PROJECT_DIR$/model_sdk/model_sdk.iml" filepath="$PROJECT_DIR$/model_sdk/model_sdk.iml" />
-      <module fileurl="file://$PROJECT_DIR$/model_utils/model_utils.iml" filepath="$PROJECT_DIR$/model_utils/model_utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/model_general_common/model_general_common.iml" filepath="$PROJECT_DIR$/model_general_common/model_general_common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/model_general_utils/model_general_utils.iml" filepath="$PROJECT_DIR$/model_general_utils/model_general_utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/model_ui_recyclerview/model_ui_recyclerview.iml" filepath="$PROJECT_DIR$/model_ui_recyclerview/model_ui_recyclerview.iml" />
     </modules>
   </component>
 </project>
