@@ -21,26 +21,20 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
-    implementation 'com.android.support:design:27.1.1'
-    implementation 'com.android.support:appcompat-v7:27.1.1'
-
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-
     // Gson
-    implementation 'com.google.code.gson:gson:2.8.2'
+    implementation 'com.google.code.gson:gson:2.8.5'
     // 底部导航栏
     implementation 'com.ashokvarma.android:bottom-navigation-bar:2.1.0'
 
-    implementation project(':model_ui_recyclerview')
-    implementation project(':model_general_utils')
-    implementation project(':model_general_common')
+    api project(':model_general_common')
+
+    implementation project(':model_third_retrofit')
+//    implementation project(':model_ui_recyclerview')
 //    implementation project(':model_af')
 //    implementation project(':model_bitmap')
 //    implementation project(':model_volley')
 //    implementation project(':model_multiload')
-    implementation project(':model_impo_permission')
+//    implementation project(':model_impo_permission')
 //    implementation project(':model_af')
 
 }

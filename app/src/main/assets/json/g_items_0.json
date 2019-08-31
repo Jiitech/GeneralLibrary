@@ -91,6 +91,17 @@
           "des": ""
         }
       ]
+    },
+    {
+      "type": "category",
+      "title": "Retrofit",
+      "items": [
+        {
+          "title": "Retrofit基础使用方式",
+          "clazz": "com.wukj.general.model.retrofit.RetrofitFragment",
+          "des": ""
+        }
+      ]
     }
   ]
 }
