@@ -10,7 +10,7 @@ import java.lang.ref.WeakReference;
  * 项目名称：UILibrary
  * 创建时间：2018/11/7 0007 下午 4:11
  * 作者：Jonyker
- * 博客：http://www.udevtech.com
+ * 博客：https://www.jianshu.com/u/07642698e7f4
  * github：https://github.com/Jonyker
  * 修改人：Jonyker
  * 联系方式：QQ/534098845

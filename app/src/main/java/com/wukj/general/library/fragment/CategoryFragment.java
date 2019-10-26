@@ -2,24 +2,25 @@ package com.wukj.general.library.fragment;
 
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.view.View;
 
+import com.google.android.material.tabs.TabLayout;
 import com.wukj.general.common.fragment.SupFragment;
 import com.wukj.general.library.R;
 import com.wukj.general.library.fragment.sample.VCategoryFragment;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 /**
  * 项目名称：UILibrary
  * 创建时间：2018/11/17 上午2:50
  * 作者：Jonyker
- * 博客：http://www.udevtech.com
+ * 博客：https://www.jianshu.com/u/07642698e7f4
  * github：https://github.com/Jonyker
  * 修改人：Jonyker
  * 联系方式：QQ/534098845
@@ -36,7 +37,7 @@ public class CategoryFragment extends SupFragment {
 
     private TabLayout mTabLayout;
     private ViewPager mVP;
-    private String[] titles = {"G技巧", "G图片", "G网络", "G基类", "G工具", "G高级", "G库"};
+    private String[] titles = {"G技巧", "UI控件", "G网络", "G基类", "G工具", "G高级", "G库"};
 
     private PAdapter mPAdapter;
 

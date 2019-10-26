@@ -1,18 +1,19 @@
 package com.wukj.general.common.fragment;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 /**
  * 项目名称：UILibrary
  * 创建时间：2018/10/30 0030 下午 3:21
  * 作者：Jonyker
- * 博客：http://www.udevtech.com
+ * 博客：https://www.jianshu.com/u/07642698e7f4
  * github：https://github.com/Jonyker
  * 修改人：Jonyker
  * 联系方式：QQ/534098845
@@ -25,7 +26,7 @@ public abstract class SupFragment extends Fragment {
 
 
     protected abstract int getCreateVID();
-    protected abstract void onInitV(@NonNull View view, @Nullable Bundle savedInstanceState);
+    protected abstract void onInitV(@NonNull View rootView, @Nullable Bundle savedInstanceState);
 
     protected View getRV(){
         return null;

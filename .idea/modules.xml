@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/model_general_common/model_general_common.iml" filepath="$PROJECT_DIR$/model_general_common/model_general_common.iml" />
       <module fileurl="file://$PROJECT_DIR$/model_general_utils/model_general_utils.iml" filepath="$PROJECT_DIR$/model_general_utils/model_general_utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/model_third_bottom-nav-bar/model_third_bottom-nav-bar.iml" filepath="$PROJECT_DIR$/model_third_bottom-nav-bar/model_third_bottom-nav-bar.iml" />
       <module fileurl="file://$PROJECT_DIR$/model_third_retrofit/model_third_retrofit.iml" filepath="$PROJECT_DIR$/model_third_retrofit/model_third_retrofit.iml" />
     </modules>
   </component>

@@ -1,8 +1,6 @@
 package com.wukj.general.model.retrofit;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.wukj.general.common.fragment.SupFragment;
@@ -10,6 +8,9 @@ import com.wukj.general.model.retrofit.api.GetRequest_Interface;
 import com.wukj.general.model.retrofit.api.PostRequest_Interface;
 import com.wukj.general.model.retrofit.entity.Translation;
 import com.wukj.general.model.retrofit.entity.Translation2;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -97,6 +98,8 @@ public class RetrofitFragment extends SupFragment {
                 System.out.println(throwable.getMessage());
             }
         });
+
+
     }
 
 

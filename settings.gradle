@@ -1,9 +1,9 @@
-include ':app', ':model_third_retrofit'
+include ':app'
 
 include ':model_general_utils'
 include ':model_general_common'
+include ':model_third_bottom-nav-bar'
 
-//include ':model_impo_permission'
+include ':model_third_retrofit'
 
-//include ':model_ui_recyclerview'
 

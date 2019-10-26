@@ -1,0 +1,47 @@
+ext {
+    // Android
+    COMPILE_SDK_VERSION = 28
+    BUILD_TOOLS_VERSION = '28.0.3'
+    MIN_SDK_VERSION = 17
+    TARGET_SDK_VERSION = 28
+
+    COMPONENT_DIR = rootProject.rootDir.absolutePath + "/gradle_general/"
+
+    GRADLES = [
+            default      :       COMPONENT_DIR + "default.gradle",
+            processor       :       COMPONENT_DIR + "processor.gradle",
+    ]
+
+    // SUPPORT
+    SUPPORT_VERSION = '27.1.1'
+    SUPPORTDEPS = [
+            supportV4:      "com.android.support:support-v4:${SUPPORT_VERSION}",
+            supportV13:     "com.android.support:support-v13:${SUPPORT_VERSION}",
+            appcompatV7:    "com.android.support:appcompat-v7:${SUPPORT_VERSION}",
+            cardview      : "com.android.support:cardview-v7:${SUPPORT_VERSION}",
+            recyclerView:   "com.android.support:recyclerview-v7:${SUPPORT_VERSION}",
+            design:         "com.android.support:design:${SUPPORT_VERSION}",
+            annotations:    "com.android.support:support-annotations:${SUPPORT_VERSION}",
+            multidex:       'com.android.support:multidex:1.0.1',
+            constraint:     'com.android.support.constraint:constraint-layout:1.1.3'
+    ]
+
+    PARCELER_VERSION="1.3.5"
+    ROUTER_VERSION="2.8.2"
+    BUTTERKNIFE_VERSION="8.4.0"
+
+    DEVDEPS = [
+            butterknife     :   "com.jakewharton:butterknife:$BUTTERKNIFE_VERSION",
+            butterknifeApt  :   "com.jakewharton:butterknife-compiler:$BUTTERKNIFE_VERSION",
+
+            parceler        :   "com.github.yjfnypeu.Parceler:api:$PARCELER_VERSION",
+            parcelerApt     :   "com.github.yjfnypeu.Parceler:compiler:$PARCELER_VERSION",
+
+            router          :   "com.github.yjfnypeu.Router:router-api:$ROUTER_VERSION",
+            routerApt       :   "com.github.yjfnypeu.Router:router-compiler:$ROUTER_VERSION",
+
+            datasupport     :   "com.github.yjfnypeu:DataSupport:0.4",
+            fastjson        :   'com.alibaba:fastjson:1.1.67.android',
+    ]
+
+}

@@ -1,40 +1,21 @@
 apply plugin: 'com.android.application'
+apply from: "${GRADLES.default}"
 
 android {
-    compileSdkVersion 27
     defaultConfig {
         applicationId "com.wukj.general.library"
-        minSdkVersion 15
-        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-    }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
     }
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
 
-    // Gson
-    implementation 'com.google.code.gson:gson:2.8.5'
     // 底部导航栏
-    implementation 'com.ashokvarma.android:bottom-navigation-bar:2.1.0'
-
-    api project(':model_general_common')
-
+//    implementation 'com.ashokvarma.android:bottom-navigation-bar:2.1.0'
+    implementation project(':model_third_bottom-nav-bar')
+    implementation project(':model_general_common')
     implementation project(':model_third_retrofit')
-//    implementation project(':model_ui_recyclerview')
-//    implementation project(':model_af')
-//    implementation project(':model_bitmap')
-//    implementation project(':model_volley')
-//    implementation project(':model_multiload')
-//    implementation project(':model_impo_permission')
-//    implementation project(':model_af')
+
 
 }

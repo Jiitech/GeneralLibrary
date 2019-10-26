@@ -18,6 +18,11 @@
           "title": "标签云",
           "clazz": "com.wukj.uilibrary.model.tagcloud.sample.FragmentTagCloud",
           "des": ""
+        },
+        {
+          "title": "ViewPager3D",
+          "clazz": "com.wukj.uilibrary.model.vp3d.sample.FragmentViewPager3D",
+          "des": ""
         }
       ]
     },
@@ -88,5 +93,3 @@
     }
   ]
 }
-
-

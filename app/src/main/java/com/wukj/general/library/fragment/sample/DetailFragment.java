@@ -2,9 +2,10 @@ package com.wukj.general.library.fragment.sample;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +16,7 @@ import android.widget.TextView;
  * 项目名称：UILibrary
  * 创建时间：2018/10/30 0030 下午 6:21
  * 作者：Jonyker
- * 博客：http://www.udevtech.com
+ * 博客：https://www.jianshu.com/u/07642698e7f4
  * github：https://github.com/Jonyker
  * 修改人：Jonyker
  * 联系方式：QQ/534098845
