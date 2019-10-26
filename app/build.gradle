@@ -11,11 +11,12 @@ android {
 
 dependencies {
 
-    // 底部导航栏
-//    implementation 'com.ashokvarma.android:bottom-navigation-bar:2.1.0'
-    implementation project(':model_third_bottom-nav-bar')
+    // 公共仓库
+    implementation project(':model_general_bottom-bar')
     implementation project(':model_general_common')
-    implementation project(':model_third_retrofit')
+
+    // 按需加载仓库
+    implementation project(':model_third_rxjava')
 
 
 }

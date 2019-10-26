@@ -2,8 +2,8 @@ include ':app'
 
 include ':model_general_utils'
 include ':model_general_common'
-include ':model_third_bottom-nav-bar'
+include ':model_general_bottom-bar'
 
-include ':model_third_retrofit'
-
+//include ':model_third_retrofit'
+include ':model_third_rxjava'
 
