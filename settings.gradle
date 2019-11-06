@@ -4,6 +4,6 @@ include ':model_general_utils'
 include ':model_general_common'
 include ':model_general_bottom-bar'
 
-//include ':model_third_retrofit'
-include ':model_third_rxjava'
+include ':model_third_retrofit'
+//include ':model_third_rxjava'
 

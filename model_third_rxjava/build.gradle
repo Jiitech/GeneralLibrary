@@ -4,7 +4,11 @@ apply from: "${GRADLES.default}"
 
 dependencies {
 
-    api project(':model_general_common')
+    implementation project(':model_general_common')
+
+    // RxJava1.x 版本
+    implementation 'io.reactivex:rxjava:1.1.1'
+    implementation 'io.reactivex:rxandroid:1.1.0'
 
 
 }

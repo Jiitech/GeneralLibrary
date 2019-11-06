@@ -102,6 +102,17 @@
           "des": ""
         }
       ]
+    },
+    {
+      "type": "category",
+      "title": "RxJava",
+      "items": [
+        {
+          "title": "RxJava基础使用方式",
+          "clazz": "com.wukj.general.model.rxjava.ui.RxJavaPrimerUI",
+          "des": ""
+        }
+      ]
     }
   ]
 }

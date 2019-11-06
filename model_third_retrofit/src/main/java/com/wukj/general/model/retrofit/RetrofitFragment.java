@@ -2,8 +2,10 @@ package com.wukj.general.model.retrofit;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
-import com.wukj.general.common.fragment.SupFragment;
+import com.wukj.general.common.fragment.SupListFragment;
 import com.wukj.general.model.retrofit.api.GetRequest_Interface;
 import com.wukj.general.model.retrofit.api.PostRequest_Interface;
 import com.wukj.general.model.retrofit.entity.Translation;
@@ -11,15 +13,15 @@ import com.wukj.general.model.retrofit.entity.Translation2;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+public class RetrofitFragment extends SupListFragment {
 
-public class RetrofitFragment extends SupFragment {
+    public static final String[] TITLES = {"requestGET", "requestPOST", "title3", "title4", "title5"};
 
     @Override
     protected int getCreateVID() {
@@ -29,12 +31,28 @@ public class RetrofitFragment extends SupFragment {
     @Override
     protected void onInitV(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        requestGET();
-
-        requestPOST();
+        //设置ListView为单选模式
+        getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+        // 给listView设置adapter显示列表
+        setListAdapter(new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, TITLES));
+        //默认选中第一个item
+        getListView().setItemChecked(0, true);
 
     }
 
+
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+
+        switch (position){
+            case 0:
+                requestGET();
+                break;
+            case 1:
+                requestPOST();
+                break;
+        }
+    }
 
     public void requestGET() {
         //步骤4:创建Retrofit对象
