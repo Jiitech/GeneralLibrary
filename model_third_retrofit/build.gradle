@@ -6,13 +6,13 @@ dependencies {
 
 
 
-    // Retrofit2
+    implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.squareup.retrofit2:retrofit:2.0.2'
-    // Retrofit2 中将converter删除，需要单独添加
     implementation 'com.squareup.retrofit2:converter-gson:2.0.2'
-    implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
-    // OkHttp3日志拦截器
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
+
+    // okhttp3.4.2,解决设置超时无效的问题
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.2'
 
     api project(':model_general_common')
 

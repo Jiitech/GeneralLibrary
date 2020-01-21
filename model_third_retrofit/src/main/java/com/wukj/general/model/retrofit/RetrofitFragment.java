@@ -6,13 +6,17 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.wukj.general.common.fragment.SupListFragment;
-import com.wukj.general.model.retrofit.api.GetRequest_Interface;
-import com.wukj.general.model.retrofit.api.PostRequest_Interface;
+import com.wukj.general.model.retrofit.api.DefaultValues;
+import com.wukj.general.model.retrofit.api.Requests;
 import com.wukj.general.model.retrofit.entity.Translation;
-import com.wukj.general.model.retrofit.entity.Translation2;
+import com.wukj.general.utils.LogUtils;
+
+import java.util.concurrent.TimeUnit;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -21,7 +25,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitFragment extends SupListFragment {
 
-    public static final String[] TITLES = {"requestGET", "requestPOST", "title3", "title4", "title5"};
+    public static final String[] TITLES = {"请求乘客列表", "请求乘客列表"};
 
     @Override
     protected int getCreateVID() {
@@ -46,79 +50,67 @@ public class RetrofitFragment extends SupListFragment {
 
         switch (position){
             case 0:
-                requestGET();
+                getArriveStations();
                 break;
             case 1:
-                requestPOST();
+                // getArriveStations();
                 break;
         }
+
     }
 
-    public void requestGET() {
-        //步骤4:创建Retrofit对象
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://fy.iciba.com/") // 设置 网络请求 Url
-                .addConverterFactory(GsonConverterFactory.create()) //设置使用Gson解析(记得加入依赖)
-                .build();
 
-        // 步骤5:创建 网络请求接口 的实例
-        GetRequest_Interface request = retrofit.create(GetRequest_Interface.class);
+    public void getArriveStations() {
 
-        //对 发送请求 进行封装
-        Call<Translation> call = request.getCall();
 
-        //步骤6:发送网络请求(异步)
+//        http://app.xintuyun.cn/service-mobile/machinesearch/pull_la
+//        // yeringcitydes?brandId=&version=&cityId=&stationId=&terminalType=S4
+
+        Requests request = getRetrofit(DefaultValues.BASE_SEARCH_URL);
+        Call<Translation>call = request.getArriveStationList("", "", "37010001","370104002", "S4");
         call.enqueue(new Callback<Translation>() {
-            //请求成功时回调
             @Override
             public void onResponse(Call<Translation> call, Response<Translation> response) {
-                // 步骤7：处理返回的数据结果
-                response.body().show();
+
+
+                LogUtils.d(this.getClass(), "网络请求--成功:" + response.isSuccessful());
+
             }
 
-            //请求失败时回调
             @Override
             public void onFailure(Call<Translation> call, Throwable throwable) {
-                System.out.println("连接失败");
+                LogUtils.d(this.getClass(), "网络请求--失败:" + throwable.getMessage());
+
             }
         });
+
     }
 
+    protected Requests getRetrofit(String baseURL) {
+        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
+            @Override
+            public void log(String message) {
+                // 打印retrofit日志
+                LogUtils.d(this.getClass(), "网络请求--内容:" + message);
+            }
+        });
+        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
-    public void requestPOST() {
-
-        //步骤4:创建Retrofit对象
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://fanyi.youdao.com/") // 设置 网络请求 Url
-                .addConverterFactory(GsonConverterFactory.create()) //设置使用Gson解析(记得加入依赖)
+        OkHttpClient client = new OkHttpClient.Builder()
+                .addInterceptor(loggingInterceptor)
+                .connectTimeout(20, TimeUnit.SECONDS)
+                // 这里设置的超时，并不是整个传输超时，而是两个字节之间的超时，如果网络弱，数据大，就会卡住
+                .readTimeout(3, TimeUnit.SECONDS)
+                .writeTimeout(3, TimeUnit.SECONDS)
+                .retryOnConnectionFailure(false)
                 .build();
 
-        // 步骤5:创建 网络请求接口 的实例
-        PostRequest_Interface request = retrofit.create(PostRequest_Interface.class);
-
-        //对 发送请求 进行封装(设置需要翻译的内容)
-        Call<Translation2> call = request.getCall("I love you");
-
-        //步骤6:发送网络请求(异步)
-        call.enqueue(new Callback<Translation2>() {
-
-            //请求成功时回调
-            @Override
-            public void onResponse(Call<Translation2> call, Response<Translation2> response) {
-                // 步骤7：处理返回的数据结果：输出翻译的内容
-                System.out.println(response.body().getTranslateResult().get(0).get(0).getTgt());
-            }
-
-            //请求失败时回调
-            @Override
-            public void onFailure(Call<Translation2> call, Throwable throwable) {
-                System.out.println("请求失败");
-                System.out.println(throwable.getMessage());
-            }
-        });
-
-
+        Retrofit retrofit = new Retrofit.Builder()
+                .client(client)
+                .baseUrl(baseURL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        return retrofit.create(Requests.class);
     }
-
 
 }
