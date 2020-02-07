@@ -2,6 +2,8 @@ package com.wukj.general.library;
 
 import android.app.Application;
 
+import com.wukj.library.xslogger.manager.LogManager;
+
 /**
  *
  * 项目名称：UILibrary
@@ -19,6 +21,22 @@ import android.app.Application;
  * 2.
  * 3.
  */
-public class CApplication extends Application {
+public class ClientApplication extends Application {
+
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        LogManager.getManager(getApplicationContext()).registerCrashHandler();
+    }
+
+    @Override
+    public void onTerminate() {
+        super.onTerminate();
+        LogManager.getManager(getApplicationContext()).unregisterCrashHandler();
+    }
+
+
+
 
 }

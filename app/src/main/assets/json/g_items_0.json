@@ -113,6 +113,17 @@
           "des": ""
         }
       ]
+    },
+    {
+      "type": "category",
+      "title": "日志",
+      "items": [
+        {
+          "title": "动作(一)",
+          "clazz": "com.wukj.library.xslogger.XSLoggerFragment",
+          "des": ""
+        }
+      ]
     }
   ]
 }

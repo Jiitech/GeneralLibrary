@@ -16,7 +16,7 @@ dependencies {
     implementation project(':model_general_common')
 
     // 按需加载仓库
-    implementation project(':model_third_retrofit')
+    implementation project(':library_xSLogger')
 
 
 }

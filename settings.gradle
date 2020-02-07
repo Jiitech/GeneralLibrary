@@ -5,7 +5,6 @@ include ':model_general_common'
 include ':model_general_bottom-bar'
 
 
-include ':model_third_retrofit'
+include ':library_xSLogger'
 
 //include ':model_third_rxjava'
-

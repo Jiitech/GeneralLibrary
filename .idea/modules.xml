@@ -4,10 +4,10 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidGeneralLibrary.iml" filepath="$PROJECT_DIR$/AndroidGeneralLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library_xSLogger/library_xSLogger.iml" filepath="$PROJECT_DIR$/library_xSLogger/library_xSLogger.iml" />
       <module fileurl="file://$PROJECT_DIR$/model_general_bottom-bar/model_general_bottom-bar.iml" filepath="$PROJECT_DIR$/model_general_bottom-bar/model_general_bottom-bar.iml" />
       <module fileurl="file://$PROJECT_DIR$/model_general_common/model_general_common.iml" filepath="$PROJECT_DIR$/model_general_common/model_general_common.iml" />
       <module fileurl="file://$PROJECT_DIR$/model_general_utils/model_general_utils.iml" filepath="$PROJECT_DIR$/model_general_utils/model_general_utils.iml" />
-      <module fileurl="file://$PROJECT_DIR$/model_third_retrofit/model_third_retrofit.iml" filepath="$PROJECT_DIR$/model_third_retrofit/model_third_retrofit.iml" />
     </modules>
   </component>
 </project>
